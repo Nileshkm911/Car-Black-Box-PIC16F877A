@@ -210,9 +210,3 @@ The project can be built using Microchip MPLAB X IDE with the XC8 compiler:
 3. Select **XC8** as the compiler and **PIC16F877A** as the device.
 4. Click **Clean and Build Project** (`Shift + F11`).
 5. Output HEX file will be generated in `dist/default/production/`.
-
----
-
-## License
-
-This project is licensed for educational and professional demonstration purposes. All rights reserved by **Nilesh Mahajan**.
