@@ -1,0 +1,38 @@
+# MPLAB X / XC8 Compiler intermediate files
+build/
+dist/
+nbproject/private/
+*.p1
+*.pre
+*.lst
+*.as
+*.sdb
+*.i
+*.obj
+*.o
+*.d
+*.cmf
+*.sym
+*.mum
+*.hxl
+*.rlf
+*.cof
+*.map
+startup.as
+startup.lst
+
+# Proteus intermediate and user files
+Project Backups/
+*.workspace
+*.pdsbak
+
+# Excluded assets per specification
+proteus_demo.gif
+picsimlab_demo.gif
+Car_Black_Box_YouTube_Thumbnail.jpg
+*.webm
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
