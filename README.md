@@ -1,4 +1,4 @@
-# Car Black Box (CBB) Telemetry Logger
+# Car Black Box - PIC16F877A microcontroller
 
 [![Author](https://img.shields.io/badge/Author-Nilesh%20Mahajan-blue.svg)](https://github.com/Nileshkm911)
 [![Microcontroller](https://img.shields.io/badge/MCU-PIC16F877A%20%40%2020MHz-orange.svg)](https://www.microchip.com/)
