@@ -1,5 +1,11 @@
 # Car Black Box (CBB) Telemetry Logger
 
+[![Author](https://img.shields.io/badge/Author-Nilesh%20Mahajan-blue.svg)](https://github.com/Nileshkm911)
+[![Microcontroller](https://img.shields.io/badge/MCU-PIC16F877A%20%40%2020MHz-orange.svg)](https://www.microchip.com/)
+[![Firmware](https://img.shields.io/badge/Firmware-Embedded%20C%20(XC8)-green.svg)](https://www.microchip.com/mplab/compilers)
+[![Proteus Demo](https://img.shields.io/badge/YouTube-Proteus%20Demo-red.svg)](https://youtu.be/YhkAp6gAiU4)
+[![PICSimLab Demo](https://img.shields.io/badge/YouTube-PICSimLab%20Demo-red.svg)](https://youtu.be/SL1gIpM6bI0)
+
 **Author:** Nilesh Mahajan  
 **Target Architecture:** Microchip PIC16F877A (8-bit Microcontroller @ 20 MHz)  
 **Toolchain:** Microchip MPLAB X IDE & XC8 (C99 Mode)  
@@ -7,7 +13,18 @@
 
 ---
 
-## 1. Overview
+## 1. Video Demonstrations
+
+Watch the live simulation runs demonstrating real-time dashboard tracking, gear transitions, collision logging, password security lockouts, time configuration, and UART log offloading:
+
+| Proteus Design Suite Simulation | PICSimLab (PICGenios) Simulation |
+| :---: | :---: |
+| [![Watch Proteus Demo](https://img.youtube.com/vi/YhkAp6gAiU4/0.jpg)](https://youtu.be/YhkAp6gAiU4) | [![Watch PICSimLab Demo](https://img.youtube.com/vi/SL1gIpM6bI0/0.jpg)](https://youtu.be/SL1gIpM6bI0) |
+| ▶️ [Watch Proteus Simulation Video](https://youtu.be/YhkAp6gAiU4) | ▶️ [Watch PICSimLab Simulation Video](https://youtu.be/SL1gIpM6bI0) |
+
+---
+
+## 2. Overview
 
 The **Car Black Box (CBB)** is an automotive embedded data logging system inspired by aeronautical flight data recorders. It continuously tracks and logs critical vehicular telemetry — including vehicle speed, real-time clock timestamps, gear shift transitions, and collisions — into the microcontroller's non-volatile internal EEPROM.
 
@@ -21,7 +38,7 @@ Designed with robust state-machine logic, the system features:
 
 ---
 
-## 2. Hardware Architecture & Pin Interface
+## 3. Hardware Architecture & Pin Interface
 
 ```
                        +-----------------------+
@@ -68,7 +85,7 @@ Designed with robust state-machine logic, the system features:
 
 ---
 
-## 3. EEPROM Memory Architecture & Mapping
+## 4. EEPROM Memory Architecture & Mapping
 
 Telemetry logs are permanently persisted in the MCU's internal non-volatile EEPROM (256 bytes) using an indexed circular FIFO buffer.
 
@@ -100,7 +117,7 @@ Each recorded telemetry record consists of 5 bytes:
 
 ---
 
-## 4. State Machine Operations & Switch Control Matrix
+## 5. State Machine Operations & Switch Control Matrix
 
 The firmware operates as a non-blocking finite state machine (FSM) governed by Timer0 1 ms hardware interrupts for debounce, hold timing, and lockout countdowns.
 
@@ -118,7 +135,7 @@ The firmware operates as a non-blocking finite state machine (FSM) governed by T
 
 ---
 
-## 5. Security Features
+## 6. Security Features
 
 1. **Default Passcode:** Initialized to `0000` (press SW5 four times).
 2. **Inactivity Timeout:** If no key is detected for 5 consecutive seconds in the login screen, the system automatically cancels authentication and reverts to the Dashboard.
@@ -129,7 +146,7 @@ The firmware operates as a non-blocking finite state machine (FSM) governed by T
 
 ---
 
-## 6. UART Telemetry Log Format
+## 7. UART Telemetry Log Format
 
 Selecting **Download log** transmits the EEPROM buffer over UART at 9600-8-N-1 in the following formatted layout:
 
@@ -146,7 +163,7 @@ Selecting **Download log** transmits the EEPROM buffer over UART at 9600-8-N-1 i
 
 ---
 
-## 7. Project Structure
+## 8. Project Structure
 
 ```text
 Car-Black-Box-PIC16F877A/
@@ -181,7 +198,7 @@ Car-Black-Box-PIC16F877A/
 
 ---
 
-## 8. Simulation & Verification Instructions
+## 9. Simulation & Verification Instructions
 
 ### Running in Proteus
 1. Launch **Proteus 8 Professional**.
@@ -202,7 +219,7 @@ Car-Black-Box-PIC16F877A/
 
 ---
 
-## 9. Compilation Instructions
+## 10. Compilation Instructions
 
 The project can be built using Microchip MPLAB X IDE with the XC8 compiler:
 1. Open **MPLAB X IDE**.
